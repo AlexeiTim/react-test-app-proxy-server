@@ -28,7 +28,7 @@ app.get('/api/movies', async (req, res, next) => {
                 api_key: API_KEY_VALUE,
             },
         })
-        res.status(200).send({ data })
+        res.status(200).send(data)
     } catch (e) {
         res.send(e)
     }
@@ -39,7 +39,7 @@ app.get('/api/movies/:id', async (req, res, next) => {
     const params = url.parse(req.url, true).query
     console.log(makeRequest)
     try {
-        const { data } = await makeRequest({
+        const data = await makeRequest({
             url: `${requestUrl}/${req.params.id}`,
             params: {
                 ...params,
