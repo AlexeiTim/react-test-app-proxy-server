@@ -43,7 +43,7 @@ app.get('/api/movies/:id', async (req, res, next) => {
             url: `${requestUrl}/${req.params.id}`,
             params: {
                 ...params,
-                append_to_responce: true,
+                append_to_response: 'videos',
                 api_key: API_KEY_VALUE
             },
         })
