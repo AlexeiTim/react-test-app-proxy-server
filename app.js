@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: ['localhost:5173', 'https://react-test-app-plum.vercel.app']
+    origin: ['http://localhost:5173', 'https://react-test-app-plum.vercel.app']
 }))
 
 const PORT = process.env.PORT || 3000;
