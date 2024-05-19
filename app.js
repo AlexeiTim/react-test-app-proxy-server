@@ -1,10 +1,15 @@
 const express = require('express');
 const url = require('url');
 const { makeRequest } = require('./service');
+const cors = require('cors')
 require('dotenv').config();
 
 
 const app = express();
+app.use(cors({
+    origin: ['localhost:5173', 'https://react-test-app-plum.vercel.app']
+}))
+
 const PORT = process.env.PORT || 3000;
 const { API_URL, API_KEY_VALUE } = process.env;
 
