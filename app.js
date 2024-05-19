@@ -5,13 +5,12 @@ require('dotenv').config();
 
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+const { API_URL, API_KEY_VALUE } = process.env;
 
 app.get('/', (req, res, next) => {
     res.send('Connected')
 })
-
-const PORT = 3000;
-const { API_URL, API_KEY_VALUE } = process.env;
 
 app.get('/api/movies', async (req, res, next) => {
     const requestUrl = `${API_URL}/discover/movie`
@@ -67,7 +66,6 @@ app.get('/api/genres', async (req, res, next) => {
         res.send(e)
     }
 })
-
 
 app.listen(PORT, () => {
     console.log(`Starting Proxy at ${PORT}`);
