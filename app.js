@@ -6,6 +6,10 @@ require('dotenv').config();
 
 const app = express();
 
+app.get('/', (req, res, next) => {
+    res.send('Connected')
+})
+
 const PORT = 3000;
 const { API_URL, API_KEY_VALUE } = process.env;
 
