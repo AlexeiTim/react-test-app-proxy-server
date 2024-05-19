@@ -6,8 +6,7 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = 8000;
-const HOST = "localhost";
+const PORT = 3000;
 const { API_URL, API_KEY_VALUE } = process.env;
 
 app.get('/api/movies', async (req, res, next) => {
@@ -66,6 +65,8 @@ app.get('/api/genres', async (req, res, next) => {
 })
 
 
-app.listen(PORT, HOST, () => {
-    console.log(`Starting Proxy at ${HOST}:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Starting Proxy at ${PORT}`);
 });
+
+module.exports = app;
